@@ -83,9 +83,27 @@ qucickdate默认以今天的起点，开始定位日期，当然你也可以使�
 
 # 使用案例
 
-使用 today 获取当天日期 
+获取当天日期 
 ```python
-from quickdate.quickdate import today
-today.format("%Y-%m-%d")
+>>> from quickdate.quickdate import DateLocate
+>>> DateLocate().format("%Y-%m-%d")
+2023-08-21
 ```
 
+获到昨天日期 
+```python
+>>> DateLocate().add(days=-1).format("%Y-%m-%d")
+2023-08-20
+```
+
+获取上周三的日期 
+```python
+>>> DateLocate().add(weeks=-1).week(3).format("%Y-%m-%d")
+2023-08-16
+```
+
+获取去年今日对应月份的最后一天
+```python
+>>> DateLocate().add(years=-1).lastDay().format("%Y-%m-%d")
+2022-08-31
+```
