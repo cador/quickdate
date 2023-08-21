@@ -58,6 +58,7 @@ class DateLocate(object):
 
         if hours != 0:
             self.date = self.date + datetime.timedelta(hours=hours)
+
         if days != 0:
             self.date = self.date + datetime.timedelta(days=days)
         
@@ -71,6 +72,3 @@ class DateLocate(object):
             self.date = self.date + relativedelta(years=years)
 
         return self
-
-
-today = DateLocate()
