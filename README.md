@@ -8,6 +8,11 @@ pip install quickdate
 
 # 如何使用
 qucickdate默认以今天的起点，开始定位日期，当然你也可以使用DateLocate.parse方法，从字符串解析一个日期，并以此为起点
+
+支持的主要函数是 `add` 函数，可以动态传入 days、weeks、months、years、hours、minutes、seconds参数，并返回为 DateLocate对象本身
+
+这意味着，可以链式定位日期，更为方便快捷
+
 ```python
 >>> from quickdate.quickdate import DateLocate
 >>> DateLocate().format("%Y-%m-%d")
@@ -61,6 +66,12 @@ qucickdate默认以今天的起点，开始定位日期，当然你也可以使�
 ```python
 >>> DateLocate().add(weeks=-1, days=2, months=-2, years=-1).format("%Y-%m-%d")
 2022-06-16
+```
+
+还可以进行链式定位
+```python
+>>> DateLocate().add(days=-1).add(weeks=-3).lastDay().format("%Y-%m-%d")
+2023-07-31
 ```
 
 可根据需求，直接设定年月日时分秒的值
