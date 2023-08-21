@@ -107,3 +107,15 @@ qucickdate默认以今天的起点，开始定位日期，当然你也可以使�
 >>> DateLocate().add(years=-1).lastDay().format("%Y-%m-%d")
 2022-08-31
 ```
+
+获取上个月的1号
+```python
+>>> DateLocate().add(months=-1).day(1).format("%Y-%m-%d")
+2023-07-01
+```
+
+获取上上周六的日期 
+```python
+>>> DateLocate().add(weeks=-2).week(6).format("%Y-%m-%d")
+2023-08-12
+```
